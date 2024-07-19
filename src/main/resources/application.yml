@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: bootiful-aggregator
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:bootiful-work
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always
+  data:
+    jpa:
+      repositories:
+        enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+logging:
+  level:
+    root: info
+    sql: debug
+    org.hibernate.SQL: trace
+server:
+  servlet:
+    context-path: /aggregator/api
